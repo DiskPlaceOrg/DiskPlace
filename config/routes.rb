@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :resources
   resources :sessions, only: %i[new create destroy]
 
   resources :users
