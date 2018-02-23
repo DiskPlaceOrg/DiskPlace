@@ -54,11 +54,7 @@ transition: all .5s ;
 margin: 0 0 0 45px;
 
 min-width: 960px;
-	
 
-	
-	
-	
 }
 
 #content{
@@ -90,7 +86,6 @@ animation: gradient 10s infinite;
 #top-menu {
 	
 	overflow: hidden;
-
 	
 	position: fixed;
 	
@@ -114,7 +109,7 @@ animation: gradient 10s infinite;
 }
 
 
-#inner-menu a{
+#inner-menu a:link{
 	text-transform: uppercase;
   float: right;
   display: block;
@@ -129,7 +124,7 @@ animation: gradient 10s infinite;
   transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
   z-index: 1;
 }
-#inner-menu a:after {
+#inner-menu a:link:after {
   content: '';
   display: block;
   height: 0px;
@@ -144,26 +139,26 @@ animation: gradient 10s infinite;
           transform-origin: bottom center;
   z-index: -1;
 }
-#inner-menu a:hover {
+#inner-menu a:link:hover {
   color:#2b334a;
 }
-#inner-menu a:hover:after {
+#inner-menu a:link:hover:after {
   right: 0;
   left: 0;
   height: 100%;
 }
 
-#inner-menu a.shrink{
+#inner-menu a:link.shrink{
 	
   color: #36ada1;
  
 }
-#inner-menu a.shrink:after {
+#inner-menu a:link.shrink:after {
  
   background-color:#36ada1;
  
 }
-#inner-menu a.shrink:hover {
+#inner-menu a:link.shrink:hover {
 color: #fff;}
 
 
@@ -188,13 +183,13 @@ color: #fff;}
 border-bottom: 1px solid rgba(255, 255, 255, 0.05);}
   
 
-.sidebar #leftside-navigation ul li.active > a {
+.sidebar #leftside-navigation ul li.active > a:link {
   color: #36ada1;
 }
 .sidebar #leftside-navigation ul li.active ul {
   display: block;
 }
-.sidebar #leftside-navigation ul li a {
+.sidebar #leftside-navigation ul li a:link {
 	
 	transform: translateZ(0);
   color: #fff;
@@ -213,13 +208,13 @@ line-height: 45px;
  
  border-bottom: 1px solid #36ada1;
   
-}.sidebar #leftside-navigation ul li a:hover {
+}.sidebar #leftside-navigation ul li a:link:hover {
 	
   color: #36ada1;
 
 }
 
-.sidebar #leftside-navigation ul li a span {
+.sidebar #leftside-navigation ul li a:link span {
   display: inline-block;
   margin-left: 10px;
   
@@ -243,7 +238,7 @@ line-height: 45px;
  
   border-bottom: none;
 }
-.sidebar #leftside-navigation ul ul li a {
+.sidebar #leftside-navigation ul ul li a:link {
 	line-height: 25px;
   font-size: 14px;
   padding-left: 10px;
@@ -389,7 +384,7 @@ line-height: 45px;
 	background: url(../images/dashed_bg.png) repeat-x left bottom;
 }
 
-#recent-posts ul li a, #archives ul li a {
+#recent-posts ul li a:link, #archives ul li a:link {
 	color: #e0e0e0;
 }
 
@@ -402,7 +397,7 @@ line-height: 45px;
 	padding: 25px 10px;
 }
 
-#footer-bottom a {
+#footer-bottom a:link {
 	color: #8f8f8f;
 }
 .left{float:left;}
