@@ -18,12 +18,16 @@
           <%= label_tag :email%>
         </div>
         <div class="inputBox">
+          <%= password_field_tag :username %>
+          <%= label_tag :username%>
+        </div>
+        <div class="inputBox">
           <%= password_field_tag :password %>
           <%= label_tag :password%>
         </div>
-        <%= submit_tag 'Login', class: 'regbutton' %>
+        <%= submit_tag 'Register', class: 'button', id: 'regbtn' %>
       <% end %>
-      <%= link_to('Sign up', root_path, id: 'back', class: 'linkbtn')%>
+      <%= link_to('Back', root_path, id: 'back', class: 'linkbtn')%>
     </div>
   </div>
 </div>
