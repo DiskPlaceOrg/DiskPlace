@@ -4,64 +4,7 @@
   <%= stylesheet_link_tag('mainstyles') %>
 </head>
 
-<nav class="main-menu" id="left">
-
-  <div class="sidebar">
-
-    <div id="leftside-navigation" class="nano">
-      <ul>
-        <li><%= link_to(image_tag('house.png'), user_path) %><span>Home</span></li>
-        <li class="sub-menu">
-          <%= link_to(image_tag('Download.png'), 'Download')%><span>Download</span>
-          <ul>
-            <%= link_to(image_tag('folderbtn.png'), '#')%>
-            <li><%= link_to(image_tag('folderbtn.png'), '#')%><span>Folders</span>
-            </li>
-            <li><%= link_to(image_tag('filesbtn.png'), '#')%><span>Files</span>
-            </li>
-            <li><%= link_to(image_tag('photobtn.png'), '#')%><span>Photos</span>
-            </li>
-            <li><%= link_to(image_tag('videobtn.png'),'#')%><span>Videos</span>
-            </li>
-            <li><%= link_to(image_tag('audiobtn.png'), '#')%><span>Audio</span>
-            </li>
-
-          </ul>
-        </li>
-        <li class="sub-menu">
-          <a href="javascript:void(0);"><%= image_tag('Upload.png')%><span>Resources</span></a>
-          <ul>
-            <li><a href="#"><%= image_tag('allbtn.png')%><span>All</span></a>
-            </li>
-            <li><a href="#"><%= image_tag('folderbtn.png')%><span>Folders</span></a>
-            </li>
-            <li><a href="#"><%= image_tag('filesbtn.png')%><span>Files</span></a>
-            </li>
-            <li><a href="#"><%= image_tag('photobtn.png')%><span>Photos</span></a>
-            </li>
-            <li><a href="#"><%= image_tag('videobtn.png')%><span>Video</span></a>
-            </li>
-            <li><a href="#"><%= image_tag('audiobtn.png')%><span>Audio</span></a>
-            </li>
-
-          </ul>
-        </li>
-        <li><form><button type="submit" name="" value="find" ><%= image_tag('searchbtn.png')%></button>
-          <div class="searchbox"><input type="text" value="" name="" placeholder="KEY" required=""/></div>
-
-        </form></li>
-        <li class="sub-menu" id="settingsbtn">
-          <a href="javascript:void(0);"><%= image_tag('settingsbtn.png')%></img></a>
-
-        </li>
-
-      </ul>
-    </div>
-
-  </div>
-</nav>
-
-
+<%= render 'main_menu' %>
 
 
 <div id="header">
@@ -96,7 +39,7 @@
 
 <div id="wrapper">
   <div id="content">
-	<a href="javascript:void(0); "id="scrollup"><img src="images/scrollup.png" alt="scrollup"></a>
+    <%= link_to(image_tag('scrollup.png'), id: 'scrollup')%>
     <div class="clear"></div>
   </div>
 </div>
