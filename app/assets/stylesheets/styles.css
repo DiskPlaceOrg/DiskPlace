@@ -161,7 +161,7 @@ animation: gradient 10s infinite;
   padding: 1em 2em;
 }
 
-.linkbtn{
+.linkbtn:link{
   float: right;
   display: block;
   padding: 1rem 3rem;
@@ -174,7 +174,7 @@ animation: gradient 10s infinite;
   transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
   z-index: 1;
 }
-.linkbtn:after {
+.linkbtn:link:after {
   content: '';
   display: block;
   height: 2px;
@@ -189,10 +189,10 @@ animation: gradient 10s infinite;
           transform-origin: bottom center;
   z-index: -1;
 }
-.linkbtn:hover {
+.linkbtn:link:hover {
   color: #fff;
 }
-.linkbtn:hover:after {
+.linkbtn:link:hover:after {
   right: 0;
   left: 0;
   height: 100%;
