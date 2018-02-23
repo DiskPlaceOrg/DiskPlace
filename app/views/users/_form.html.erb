@@ -1,0 +1,45 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <title>Log In</title>
+  <%= stylesheet_link_tag('styles')%>
+</head>
+<div class="frozbox">
+
+  <div id="logo">
+    <%= image_tag('D.png')%>
+  </div>
+
+  <div class ="box">
+
+    <div id="registerbox">
+
+      <%= form_with(model: user, local: true, id: 're') do |form| %>
+        <div class="inputBox">
+          <%= form.text_field :nick_name, id: :user_nick_name %>
+          <%= form.label :nick_name %>
+        </div>
+
+        <div class="inputBox">
+          <%= form.text_field :email, id: :user_email %>
+          <%= form.label :email %>
+        </div>
+
+        <div class="inputBox">
+          <%= form.password_field :password, id: :user_password %>
+          <%= form.label :password %>
+        </div>
+
+        <div class="button", id="regbtn">
+          <%= form.submit('Register') %>
+        </div>
+
+        <%= link_to 'Back', root_path, id: 'back', class: 'linkbtn' %>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>
+<%= javascript_url('https://code.jquery.com/jquery-3.3.1.min.js') %>

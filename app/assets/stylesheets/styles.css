@@ -1,0 +1,232 @@
+
+body {
+	
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url(http://sf.co.ua/15/12/wallpaper-263e.jpg);
+    background-size: cover;
+	background-attachment: fixed;
+	transform: translateZ(0);
+	/*animation: anime 50s infinite;
+	-moz-animation: anime 50s infinite;
+	-webkit-animation: anime 50s infinite;*/
+	
+	
+}
+
+.frozbox{
+	margin: 0 auto;
+	margin-top: 5%;
+	margin-bottom: 40px;
+	position:relative;
+	width: 600px;
+	overflow:hidden;
+    z-index: 1;
+	height: 635px;
+    background: inherit;
+    box-sizing: border-box;
+    box-shadow: 0 .5em 1em rgba(0,0,0,.3);
+  }
+.frozbox::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: inherit;
+  box-shadow: inset 0 0 3000px rgba(255,255,255,.3);
+  filter: blur(10px);
+  margin: -20px;
+}
+.box {
+	height: 325px;
+	margin: 250px 50px;
+    padding: 40px;
+	border: 0;
+    background: #fff;
+    box-sizing: border-box;
+	}
+
+
+
+.box .inputBox {
+    position: relative;
+}
+
+.box .inputBox input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: a1a1a1;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #36ada1;
+    outline: none;
+    background: transparent;
+}
+
+.box .inputBox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #a1a1a1;
+    pointer-events: none;
+    transition: .5s; 
+
+}
+
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #36ada1;
+    font-size: 12px;
+}
+
+
+@keyframes anime  {
+	0% {background:url(https://onlimegames.ru/storage/image/public/2017/12/23/poigyss3bvkkg88ckwgsoc8ck44sg4g.jpg)}
+	33% {background:url(http://cdn.mos.cms.futurecdn.net/578f58bafc2a34fd633dbaed50d0c3e0.jpg)}
+
+	66% {background:url(https://cdn3.dualshockers.com/wp-content/uploads/2016/02/firewatch_5.jpg)}
+	100% {background:url(https://onlimegames.ru/storage/image/public/2017/12/23/poigyss3bvkkg88ckwgsoc8ck44sg4g.jpg)}
+}
+@-webkit-keyframes anime  {
+	0% {background:url(https://onlimegames.ru/storage/image/public/2017/12/23/poigyss3bvkkg88ckwgsoc8ck44sg4g.jpg)}
+	33% {background:url(http://cdn.mos.cms.futurecdn.net/578f58bafc2a34fd633dbaed50d0c3e0.jpg)}
+	66% {background:url(https://cdn3.dualshockers.com/wp-content/uploads/2016/02/firewatch_5.jpg)}
+	100% {background:url(https://onlimegames.ru/storage/image/public/2017/12/23/poigyss3bvkkg88ckwgsoc8ck44sg4g.jpg)}
+}
+@-moz-keyframes anime  {
+	0% {background:url(https://onlimegames.ru/storage/image/public/2017/12/23/poigyss3bvkkg88ckwgsoc8ck44sg4g.jpg)}
+	33% {background:url(http://cdn.mos.cms.futurecdn.net/578f58bafc2a34fd633dbaed50d0c3e0.jpg)}
+	66% {background:url(https://cdn3.dualshockers.com/wp-content/uploads/2016/02/firewatch_5.jpg)}
+	100% {background:url(https://onlimegames.ru/storage/image/public/2017/12/23/poigyss3bvkkg88ckwgsoc8ck44sg4g.jpg)}
+}
+@-ms-keyframes anime  {
+	0% {background:url(https://onlimegames.ru/storage/image/public/2017/12/23/poigyss3bvkkg88ckwgsoc8ck44sg4g.jpg)}
+	33% {background:url(http://cdn.mos.cms.futurecdn.net/578f58bafc2a34fd633dbaed50d0c3e0.jpg)}
+	66% {background:url(https://cdn3.dualshockers.com/wp-content/uploads/2016/02/firewatch_5.jpg)}
+	100% {background:url(https://onlimegames.ru/storage/image/public/2017/12/23/poigyss3bvkkg88ckwgsoc8ck44sg4g.jpg)}
+}
+
+
+
+#logo{
+	position: absolute;
+	margin: 50px;
+	height: 230px;
+	transform: translateZ(0);
+	
+	background-image: -webkit-linear-gradient(180deg, rgba(255,255,255,0) 0, rgba(255,255,255,1) 50%);
+background-image: -moz-linear-gradient(180deg, rgba(255,255,255,0) 0, rgba(255,255,255,1) 50%);
+background-image: linear-gradient(180deg, rgba(255,255,255,0) 0, rgba(255,255,255,1) 50%);
+background-position: 50% 50%;
+-webkit-background-origin: padding-box;
+background-origin: padding-box;
+-webkit-background-clip: border-box;
+background-clip: border-box;
+-webkit-background-size: auto auto;
+background-size: auto auto;
+animation: gradient 10s infinite;
+
+	}	
+
+.button:hover,
+.button:focus {
+  -webkit-box-shadow: 0 0.5em 0.5em -0.4em #36ada1;
+          box-shadow: 0 0.5em 0.5em -0.4em #36ada1;
+  -webkit-transform: translateY(-0.25em);
+          transform: translateY(-0.25em);
+}
+.button {
+	  color: #fff;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+.button:hover, .button:focus {
+  border-color: #36ada1;
+  background: #fff;
+  color: #36ada1;
+}
+.button {
+  font-family: Arial,sans-serif;
+  background: #36ada1;
+  border: 2px solid #36ada1;
+  text-transform: uppercase;
+  font: inherit;
+  line-height: 1;
+  padding: 1em 2em;
+}
+
+.linkbtn{
+  float: right;
+  display: block;
+  padding: 1rem 3rem;
+  font-family: sans-serif;
+  font-size: 1 rem;
+  text-decoration: none;
+  color: #36ada1;
+  position: relative;
+  -webkit-transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  z-index: 1;
+}
+.linkbtn:after {
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  right: 1.25rem;
+  left: 1.25rem;
+  background-color:#36ada1 ;
+  -webkit-transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  z-index: -1;
+}
+.linkbtn:hover {
+  color: #fff;
+}
+.linkbtn:hover:after {
+  right: 0;
+  left: 0;
+  height: 100%;
+}
+#registerbox{display:none}
+#back{margin: 0;}
+#loginform{margin:35px;}
+
+@keyframes gradient {
+	0% {
+		height: 38%
+		
+	}
+	
+	25% {
+		height: 57%
+		
+	}
+	50% {
+		height: 45%
+		
+	}
+	75% {
+		height: 60%
+		
+	}
+	100% {
+		height: 38%
+		
+	}
+}
+
+
+
+
+	
+	

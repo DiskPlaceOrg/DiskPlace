@@ -1,0 +1,29 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <title>Log In</title>
+  <%= stylesheet_link_tag('styles')%>
+</head>
+
+<div class="frozbox">
+  <div id="logo">
+    <%= image_tag('D.png')%>
+  </div>
+
+  <div class="box">
+    <div id="loginbox">
+      <%= form_tag sessions_path do %>
+        <div class="inputBox">
+          <%= text_field_tag :email %>
+          <%= label_tag :email%>
+        </div>
+        <div class="inputBox">
+          <%= password_field_tag :password %>
+          <%= label_tag :password%>
+        </div>
+        <%= submit_tag 'Login', class: 'button' %>
+        <%= link_to('Sign up', new_user_path, id: 'reg', class: 'linkbtn')%>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,151 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Disk Place</title>
+  <%= stylesheet_link_tag('mainstyles') %>
+</head>
+
+<nav class="main-menu" id="left">
+
+  <div class="sidebar">
+
+    <div id="leftside-navigation" class="nano">
+      <ul>
+        <li><%= link_to(image_tag('house.png'), user_path) %><span>HOME</span></li>
+        <li class="sub-menu">
+          <%= link_to(image_tag('Download.png'), 'Download')%><span>Download</span>
+          <ul>
+            <%= link_to(image_tag('folderbtn.png'), '#')%>
+            <li><%= link_to(image_tag('folderbtn.png'), '#')%><span>Folders</span>
+            </li>
+            <li><%= link_to(image_tag('filesbtn.png'), '#')%><span>Files</span>
+            </li>
+            <li><%= link_to(image_tag('photobtn.png'), '#')%><span>Photos</span>
+            </li>
+            <li><%= link_to(image_tag('videobtn.png'),'#')%><span>Videos</span>
+            </li>
+            <li><%= link_to(image_tag('audiobtn.png'), '#')%><span>Audio</span>
+            </li>
+
+          </ul>
+        </li>
+        <li class="sub-menu">
+          <a href="javascript:void(0);"><%= image_tag('Upload.png')%><span>Resources</span></a>
+          <ul>
+            <li><a href="#"><%= image_tag('allbtn.png')%><span>All</span></a>
+            </li>
+            <li><a href="#"><%= image_tag('folderbtn.png')%><span>Folders</span></a>
+            </li>
+            <li><a href="#"><%= image_tag('filesbtn.png')%><span>Files</span></a>
+            </li>
+            <li><a href="#"><%= image_tag('photobtn.png')%><span>Photos</span></a>
+            </li>
+            <li><a href="#"><%= image_tag('videobtn.png')%><span>Video</span></a>
+            </li>
+            <li><a href="#"><%= image_tag('audiobtn.png')%><span>Audio</span></a>
+            </li>
+
+          </ul>
+        </li>
+        <li><form><button type="submit" name="" value="find" ><%= image_tag('searchbtn.png')%></button>
+          <div class="searchbox"><input type="text" value="" name="" placeholder="KEY" required=""/></div>
+
+        </form></li>
+        <li class="sub-menu" id="settingsbtn">
+          <a href="javascript:void(0);"><%= image_tag('settingsbtn.png')%></img></a>
+
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+<div id="header">
+
+  <div id="logo"><%= image_tag('logo1.png')%></div>
+  <div id="avatar"><%= link_to(image_tag('avatar.png'), root_url ) %></div>
+  <span id="avatarname"><%= current_user.nick_name %></span>
+  <div class="clear"></div>
+
+</div>
+<div id="top-menu">
+  <div id="inner-menu">
+    <ul>
+      <li><a href="javascript:void(0); "id="sall">Select all</a></li>
+      <li><a href="javascript:void(0);" id="unsall">Unselect all</a></li>
+      <li><a href="#">Share</a></li>
+
+      <li><input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
+        <label for="toggle-on" class="btn">By date</label>
+        <input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio">
+        <label for="toggle-off" class="btn">By name</label></li>
+
+      <!--	<li><select>
+        <option>BY DATE</option>
+        <option>A..Z</option>
+        <option>Z..A</option>
+        </select></li>-->
+    </ul>
+
+  </div>
+</div>
+
+<div id="wrapper">
+  <div id="content">
+    <div class="clear"></div>
+
+  </div>
+
+  <div id="footer">
+    <div id="footer-top"></div>
+    <div id="footer-middle">
+      <div id="middle-content">
+        <div class="footer-box">
+          <div id="magazine">
+            <p>Site was founded in 2018.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          </div>
+        </div>
+        <div class="footer-box">
+          <div id="recent-posts">
+            <h3><span>Sponsors</span></h3>
+            <ul>
+              <li><a href="#">Lorem Ipsum is simply dummy text of the printings</a></li>
+              <li><a href="#">Lorem Ipsum is simply dummy text of the printing</a></li>
+              <li><a href="#">Lorem Ipsum is simply dummy text of the printing</a></li>
+              <li><a href="#">Lorem Ipsum is simply dummy text of the printing</a></li>
+              <li><a href="#">Lorem Ipsum is simply dummy text of the printing</a></li>
+              <li><a href="#">Lorem Ipsum is simply dummy text of the printing</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-box" id="footer-box">
+          <div id="archives">
+            <h3><span>Links</span></h3>
+            <ul>
+              <li><a href="#">Lorem Ipsum is simply </a></li>
+              <li><a href="#">Lorem Ipsum is simply </a></li>
+              <li><a href="#">Lorem Ipsum is simply </a></li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="footer-bottom">
+      <div id="bottom-content">
+        <p class="left">Copyright &copy; 2018 <a href="#">Dplace</a> All Rights Reserved.</p>
+        <p class="right">Designed &amp; Developed By <a href="#">Tatarskyy Alexander &amp; Nazar Shtereb</a>.</p>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag('users')%>
