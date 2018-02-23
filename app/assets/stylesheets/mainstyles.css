@@ -1,4 +1,13 @@
+
+
 @import url(reset.css);
+body {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
 body {
   margin:0px;
   padding:0px;
@@ -54,11 +63,15 @@ transition: all .5s ;
 margin: 0 0 0 45px;
 
 min-width: 960px;
+	
 
+	
+	
+	
 }
 
 #content{
-	
+	padding-top: 50px;
 	min-height: 1000px;
 	overflow: hidden;
 	background: rgba(255,255,255,.85);
@@ -86,6 +99,7 @@ animation: gradient 10s infinite;
 #top-menu {
 	
 	overflow: hidden;
+
 	
 	position: fixed;
 	
@@ -264,11 +278,59 @@ bottom: 0;
 
 
 .file{float:left;
-margin: 45px;
+margin: 30px;
  box-shadow: 0 .5em 1em rgba(0,0,0,.3);
+ 
+ border: 3px solid transparent;
+ 
 	
-}
+	}
+	
+	.file.checked{border: 3px solid #36ada1;
+	animation: select 3s infinite;}
+	.file.moving{border: 3px solid #2b334a;
+	animation: move 3s infinite;}
 
+	
+	@keyframes select {
+		0% {
+		border-color:#36ada1;
+		
+	}
+	
+	
+	50% {
+		border-color:transparent;
+		
+	}
+	
+	100% {
+		border-color:#36ada1;
+		
+	}
+		
+	}
+	
+	
+	@keyframes move {
+		0% {
+		border-color:#2b334a;
+		
+	}
+	
+	
+	50% {
+		border-color:transparent;
+		
+	}
+	
+	100% {
+		border-color:#2b334a;
+		
+	}
+		
+	}
+	
 .text{
 	padding: 35px;
 }
@@ -480,8 +542,7 @@ input.toggle:checked + label:after {
   
 	
 }
-#top-menu select.shrink{color:#36ada1;}
-#top-menu select option{color:#2b334a;}
+
 
 
 #avatarname{
@@ -496,4 +557,40 @@ input.toggle:checked + label:after {
 #avatar{float: right;
 transition: all .5s;}
 #avatar:hover{transform: translateX(-5px);}
+#scrollup{position:fixed;
+display:none;
+top: 50px;
+left:50px;
+}
 
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+.dropdown-content a:link {
+    color: #2b334a;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown-content a:link:hover {background-color: #ddd}
+
+
+.show {display:block;}
