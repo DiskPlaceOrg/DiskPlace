@@ -4,38 +4,38 @@
 
     <div id="leftside-navigation" class="nano">
       <ul>
-        <li><%= link_to(image_tag('house.png'), user_path) %><span>Home</span></li>
-        <li class="sub-menu">
-          <%= link_to(image_tag('Download.png'), 'Download')%><span>Download</span>
-          <ul>
-            <%= link_to(image_tag('folderbtn.png'), '#')%>
-            <li><%= link_to(image_tag('folderbtn.png'), '#')%><span>Folders</span>
-            </li>
-            <li><%= link_to(image_tag('filesbtn.png'), '#')%><span>Files</span>
-            </li>
-            <li><%= link_to(image_tag('photobtn.png'), '#')%><span>Photos</span>
-            </li>
-            <li><%= link_to(image_tag('videobtn.png'),'#')%><span>Videos</span>
-            </li>
-            <li><%= link_to(image_tag('audiobtn.png'), '#')%><span>Audio</span>
-            </li>
 
-          </ul>
-        </li>
+         <li class="sub-menu">
+
+          <%= link_to(image_tag('Download.png') + content_tag(:span,'Download'),'#')%>
+            <ul>
+              <li>  <%= link_to(image_tag('folderbtn.png') + content_tag(:span,'Folders'),'#')%>
+              </li>
+              <li>  <%= link_to(image_tag('filesbtn.png') + content_tag(:span,'Files'),'#')%>
+              </li>
+              <li>  <%= link_to(image_tag('photobtn.png') + content_tag(:span,'Photos'),'#')%>
+              </li>
+              <li>  <%= link_to(image_tag('videobtn.png') + content_tag(:span,'Videos'),'#')%>
+              </li>
+              <li>  <%= link_to(image_tag('audiobtn.png') + content_tag(:span,'Audios'),'#')%>
+              </li>
+
+           </ul>
+          </li>
         <li class="sub-menu">
-          <a href="javascript:void(0);"><%= image_tag('Upload.png')%><span>Resources</span></a>
+          <%= link_to(image_tag('Upload.png') + content_tag(:span,'Resources'),'#')%>
           <ul>
-            <li><a href="#"><%= image_tag('allbtn.png')%><span>All</span></a>
+            <li>  <%= link_to(image_tag('allbtn.png') + content_tag(:span,'All'),'#')%>
             </li>
-            <li><a href="#"><%= image_tag('folderbtn.png')%><span>Folders</span></a>
+            <li>  <%= link_to(image_tag('folderbtn.png') + content_tag(:span,'Folders'),'#')%>
             </li>
-            <li><a href="#"><%= image_tag('filesbtn.png')%><span>Files</span></a>
+            <li>  <%= link_to(image_tag('filesbtn.png') + content_tag(:span,'Files'),'#')%>
             </li>
-            <li><a href="#"><%= image_tag('photobtn.png')%><span>Photos</span></a>
+            <li>  <%= link_to(image_tag('photobtn.png') + content_tag(:span,'Photos'),'#')%>
             </li>
-            <li><a href="#"><%= image_tag('videobtn.png')%><span>Video</span></a>
+            <li>  <%= link_to(image_tag('videobtn.png') + content_tag(:span,'Videos'),'#')%>
             </li>
-            <li><a href="#"><%= image_tag('audiobtn.png')%><span>Audio</span></a>
+            <li>  <%= link_to(image_tag('audiobtn.png') + content_tag(:span,'Audios'),'#')%>
             </li>
 
           </ul>
@@ -44,10 +44,7 @@
           <div class="searchbox"><input type="text" value="" name="" placeholder="KEY" required=""/></div>
 
         </form></li>
-        <li class="sub-menu" id="settingsbtn">
-          <a href="javascript:void(0);"><%= image_tag('settingsbtn.png')%></img></a>
 
-        </li>
 
       </ul>
     </div>

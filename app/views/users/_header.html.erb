@@ -1,6 +1,6 @@
 <div id="header">
 
-  <div id="logo"><%= image_tag('logo1.png')%></div>
+  <div id="logo-main"><%= link_to(image_tag('logo1.png'),'#') %></div>
   <div id="avatar"><%= link_to(image_tag('avatar.png'), root_url ) %></div>
   <span id="avatarname"><%= current_user.nick_name %></span>
   <div class="clear"></div>
