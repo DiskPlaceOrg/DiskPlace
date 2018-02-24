@@ -6,44 +6,10 @@
 
 <%= render 'main_menu' %>
 
+<%= render 'header'%>
 
-<div id="header">
-
-  <div id="logo"><%= image_tag('logo1.png')%></div>
-  <div id="avatar"><%= link_to(image_tag('avatar.png'), root_url ) %></div>
-  <span id="avatarname"><%= current_user.nick_name %></span>
-  <div class="clear"></div>
-
-</div>
-<div id="top-menu">
-  <div id="inner-menu">
-    <ul>
-      <li><a href="javascript:void(0); "id="sall">Select all</a></li>
-      <li><a href="javascript:void(0);" id="unsall">Unselect all</a></li>
-      <li><a href="#">Share</a></li>
-
-      <li><input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
-        <label for="toggle-on" class="btn">By date</label>
-        <input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio">
-        <label for="toggle-off" class="btn">By name</label></li>
-
-      <!--	<li><select>
-        <option>BY DATE</option>
-        <option>A..Z</option>
-        <option>Z..A</option>
-        </select></li>-->
-    </ul>
-
-  </div>
-</div>
-
-<div id="wrapper">
-  <div id="content">
-    <%= link_to(image_tag('scrollup.png'), id: 'scrollup')%>
-    <div class="clear"></div>
-  </div>
-</div>
-
+<%= render 'top_menu' %>
+<%= render 'file_content' %>
 <%= render 'footer' %>
 
 <%= javascript_include_tag('users')%>

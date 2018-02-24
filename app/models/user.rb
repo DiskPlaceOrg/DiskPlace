@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :resources
 
   validates :nick_name,
             presence: true,

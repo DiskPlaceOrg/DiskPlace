@@ -227,6 +227,17 @@ animation: gradient 10s infinite;
 	}
 }
 
+.passbox-left{
+    float: left
+}
+
+.passbox-right{
+    float: right
+}
+
+.clear{
+    clear: both
+}
 
 
 

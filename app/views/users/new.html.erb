@@ -1,33 +1,38 @@
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-  <title>Log In</title>
-  <%= stylesheet_link_tag('styles')%>
-</head>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Log In</title>
+    <%= stylesheet_link_tag('styles')%>
+  </head>
 
-<div class="frozbox">
-  <div id="logo">
-    <%= image_tag('D.png')%>
-  </div>
+  <div class="frozbox">
+    <div id="logo">
+      <%= image_tag('D.png')%>
+    </div>
 
-  <div class="box">
-    <div id="registerbox">
-      <%= form_tag new_user_path do %>
-        <div class="inputBox">
-          <%= text_field_tag :email %>
-          <%= label_tag :email%>
-        </div>
-        <div class="inputBox">
-          <%= password_field_tag :username %>
-          <%= label_tag :username%>
-        </div>
-        <div class="inputBox">
-          <%= password_field_tag :password %>
-          <%= label_tag :password%>
-        </div>
-        <%= submit_tag 'Register', class: 'button', id: 'regbtn' %>
-      <% end %>
-      <%= link_to('Back', root_path, id: 'back', class: 'linkbtn')%>
+    <div class="box">
+      <div id="registerbox">
+        <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do %>
+          <div class="inputBox">
+            <%= text_field(:users, :email) %>
+            <%= label_tag :email%>
+          </div>
+          <div class="inputBox">
+            <%= text_field(:users, :nick_name) %>
+            <%= label_tag :nick_name%>
+          </div>
+          <div class="inputBox passbox-left">
+            <%= password_field(:users, :password)%>
+            <%= label_tag :password %>
+          </div>
+          <div class="inputBox passbox-right">
+            <%= password_field(:users, :password_confirmation) %>
+            <%= label_tag :password_confirmation %>
+          </div>
+          <div class="clear"></div>
+          <%= submit_tag 'Register', class: 'button', id: 'regbtn' %>
+        <% end %>
+        <%= link_to('Back', root_path, id: 'back', class: 'linkbtn')%>
+      </div>
     </div>
   </div>
-</div>
