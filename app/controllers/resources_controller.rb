@@ -1,58 +1,26 @@
 class ResourcesController < ApplicationController
-  before_action :set_resource, only: [:show, :edit, :update, :destroy]
-
-  # GET /resources
   def index
-    @resources = Resource.all
+    @resources = Resource.order('created_at')
   end
 
-  # GET /resources/1
-  def show
-  end
-
-  # GET /resources/new
   def new
     @resource = Resource.new
   end
 
-  # GET /resources/1/edit
-  def edit
-  end
-
-  # POST /resources
   def create
     @resource = Resource.new(resource_params)
-
     if @resource.save
-      redirect_to @resource, notice: 'Resource was successfully created.'
+      flash[:notice] = 'Successfully added new photo!'
+      redirect_to root_path
     else
+      flash[:alert] = 'Error adding new photo!'
       render :new
     end
   end
 
-  # PATCH/PUT /resources/1
-  def update
-    if @resource.update(resource_params)
-      redirect_to @resource, notice: 'Resource was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  # DELETE /resources/1
-  def destroy
-    @resource.destroy
-    redirect_to resources_url, notice: 'Resource was successfully destroyed.'
-  end
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_resource
-      @resource = Resource.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def resource_params
-      params.require(:resource).permit(:file_name, :file_type, :file_size, :file_path)
-    end
+  def photo_params
+    params.require(:resource).permit(:file)
+  end
 end
