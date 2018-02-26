@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180225191121) do
+ActiveRecord::Schema.define(version: 20180226075403) do
 
   create_table "resources", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20180225191121) do
     t.string "file_content_type"
     t.integer "file_file_size"
     t.datetime "file_updated_at"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_resources_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -10,17 +10,27 @@ class ResourcesController < ApplicationController
   def create
     @resource = Resource.new(resource_params)
     if @resource.save
-      flash[:notice] = 'Successfully added new photo!'
+      flash[:notice] = 'Successfully added new resource!'
       redirect_to root_path
     else
-      flash[:alert] = 'Error adding new photo!'
+      flash[:alert] = 'Error adding new resource!'
       render :new
+    end
+  end
+
+  def destroy
+    @resource = Resource.find(params[:id])
+    if @resource.destroy
+      flash[:notice] = 'Successfully deleted resource'
+      redirect_to root_path
+    else
+      flash[:alert] = 'Error deleted resource'
     end
   end
 
   private
 
-  def photo_params
+  def resource_params
     params.require(:resource).permit(:file)
   end
 end
