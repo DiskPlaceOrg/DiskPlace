@@ -1,8 +1,9 @@
 <div id="header">
 
-  <div id="logo-main"><%= link_to(image_tag('logo1.png'),'#') %></div>
-  <div id="avatar"><%= link_to(image_tag('avatar.png'), root_url ) %></div>
-  <span id="avatarname"><%= current_user.nick_name %></span>
+  <div id="logo-main"><h1>PLACE</h1><div class="clear"></div></div>
+  <div id="avatar"><div id="myDropdown" class="dropdown-content"><%= link_to('Logout', root_url)%></div> <span id="avatarname"><%= current_user.nick_name %></span></div>
+
   <div class="clear"></div>
 
 </div>
+

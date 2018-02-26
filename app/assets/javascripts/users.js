@@ -88,10 +88,10 @@ $(document).on("click", ".file", function(evt) { if ((evt.altKey)&&($(evt.target
     $('.file').removeClass('moving');
     $(evt.target).parent().addClass('moving');
 }});
-$(document).on("click", ".file", function(evt) {
+$(document).on("click", "#avatar", function(evt) {
     if($(evt.target).parent().find(".dropdown-content").hasClass("show")===false ){
-        $(".file .dropdown-content").removeClass("show");
-        $(evt.target).parent().find(".dropdown-content").addClass("show");}else{$(".file .dropdown-content").removeClass("show");
+        $("#avatar .dropdown-content").removeClass("show");
+        $(evt.target).parent().find(".dropdown-content").addClass("show");}else{$("#avatar .dropdown-content").removeClass("show");
     }
 });
 

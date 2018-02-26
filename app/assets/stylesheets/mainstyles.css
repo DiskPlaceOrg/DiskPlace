@@ -1,5 +1,5 @@
 @import url(reset.css);
-
+@import url(http://allfont.ru/allfont.css?fonts=tele-marines);
 body {
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -565,7 +565,7 @@ input.toggle:checked + label:after {
 
 }
 
-#avatarname {
+#avatarname { cursor: pointer;
     margin-top: 15px;
     float: right;
     font-weight: bold;
@@ -576,17 +576,17 @@ input.toggle:checked + label:after {
 }
 
 #avatar {
+
     float: right;
     transition: all .5s;
+    margin-right: 50px;
 }
 
 #avatar a:visited {
     outline: none;
 }
 
-#avatar:hover {
-    transform: translateX(-5px);
-}
+
 
 #avatar a:hover {
     background: none;
@@ -599,39 +599,63 @@ input.toggle:checked + label:after {
     left: 50px;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+
 
 .dropdown-content {
+top: 50px;
     display: none;
     position: absolute;
     background-color: #fff;
-    min-width: 160px;
+    min-width: 100px;
+
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+
 }
 
 .dropdown-content a, .dropdown-content a:visited {
-    color: #2b334a;
+    color: #36ada1;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
-
-.dropdown-content a:hover {
-    background-color: #ddd
+.dropdown-content a:hover{
+    background: #0088bb;
 }
+
 
 .show {
     display: block;
+    z-index: 3;
 }
 
-#logo-main a:hover {
-    background: transparent;
-}
 
 #logo-main {
     float: left;
+    background: #fff;
+    padding-left: 30px;
+}
+
+#header h1 {
+
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+transition: all .5s;
+    font-family: 'Tele-marines',arial;
+    font-weight: bold;
+    font-size: 2.3em;
+    background: #1d1d1d;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 50px;
+    animation: gradient  5s infinite;
+}
+@keyframes gradient {
+    0% {background: #36ada1;-webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;}
+    33% {background: #4b7289;-webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;}
+    66% {background: #0088bb;-webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;}
+    100% {background: #36ada1;-webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;}
 }
