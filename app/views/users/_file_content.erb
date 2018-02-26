@@ -5,11 +5,10 @@
     <div class="media">
       <% current_user.resources.each do |resource|%>
       <div class="media-left">
-        <!-- Renders image -->
-        <%= link_to image_tag(resource.file.url, class: 'media-object'), resource.file.url, target: '_blank' %>
+        <%= link_to image_tag(resource.file.url, class: 'media-object', width: '350px', height: '350px'), resource.file.url, target: '_blank' %>
       </div>
         <div class="media-body">
-          <h4 class="media-heading"><%= photo.name %></h4>
+          <h4 class="media-heading"></h4>
         </div>
       <% end %>
     </div>

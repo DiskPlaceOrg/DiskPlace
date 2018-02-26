@@ -239,6 +239,10 @@ animation: gradient 10s infinite;
     clear: both
 }
 
+.media-object{
+    width: 300px;
+    height: 300px;
+}
 
 
 

@@ -8,10 +8,10 @@ class ResourcesController < ApplicationController
   end
 
   def create
-    @resource = Resource.new(resource_params)
+    @resource = current_user.resources.build(file: resource_params[:file])
     if @resource.save
       flash[:notice] = 'Successfully added new resource!'
-      redirect_to root_path
+      redirect_to current_user
     else
       flash[:alert] = 'Error adding new resource!'
       render :new
