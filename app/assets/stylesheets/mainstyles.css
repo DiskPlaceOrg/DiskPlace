@@ -47,7 +47,7 @@ body {
 
 }
 
-.main-menu::before {
+.main-menu::before,#top-menu::before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -56,11 +56,13 @@ body {
     bottom: 0;
     left: 0;
     background: inherit;
-    box-shadow: inset 0 0 3000px rgba(29, 29, 29, 1);
+
     filter: blur(10px);
     margin: -20px;
     transition: box-shadow .5s;
 }
+.main-menu::before{ box-shadow: inset 0 0 3000px rgba(29, 29, 29, 1);}
+#top-menu::before{ box-shadow: inset 0 0 3000px rgba(255, 255, 255, 0.2);}
 
 .main-menu:hover::before {
     box-shadow: inset 0 0 3000px rgba(0, 0, 0, 0.1);
@@ -75,7 +77,7 @@ body {
 }
 
 #content {
-    padding-top: 50px;
+    margin-top: 35px;
     min-height: 700px;
 
     background: rgba(255, 255, 255, .85);
@@ -89,11 +91,8 @@ body {
     box-shadow: 0 .5em 1em rgba(0, 0, 0, .3);
 }
 
-#header {
+#header {background: #fff;
 
-    background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #2b334a 90%);
-    background-image: -moz-linear-gradient(180deg, rgba(255, 255, 255, 0) 0, #2b334a 90%);
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, #2b334a 90%);
 
 }
 
@@ -104,8 +103,8 @@ body {
     position: fixed;
 
     height: 35px;
-    background: #2b334a;
-    border-bottom: 4px solid #fff;
+    background: inherit;
+
 }
 
 #top-menu.shrink {
@@ -113,7 +112,7 @@ body {
 
     transition: all ease-in .3s;
     background: #fff;
-    border-bottom: 4px solid #36ada1;
+    border-bottom: 3px solid #36ada1;
 
 }
 
@@ -126,7 +125,7 @@ body {
     text-transform: uppercase;
     float: right;
     display: block;
-    padding: 0.65rem 3rem;
+    padding: 0.7rem 3rem;
     font-family: Arial, sans-serif;
     font-size: 12px;
     text-decoration: none;
@@ -156,7 +155,7 @@ body {
 
 #inner-menu a:hover {
     background: transparent;
-    color: #2b334a;
+    color: #4b7289;
 }
 
 #inner-menu a:hover:after {
@@ -486,7 +485,7 @@ body {
     text-transform: uppercase;
     color: #fff;
     display: inline-block;
-    padding: 10px;
+    padding: 11px;
     position: relative;
     text-align: center;
     -webkit-transition: background 600ms ease, color 600ms ease;
@@ -541,7 +540,7 @@ input.toggle.toggle-right + label:after {
 
 input.toggle:checked + label {
     cursor: default;
-    color: #2b334a;
+    color: #4b7289;
     -webkit-transition: color 200ms;
     transition: color 200ms;
 }
@@ -572,7 +571,7 @@ input.toggle:checked + label:after {
     font-weight: bold;
     font-family: Arial, sans-serif;
     font-size: 14px;
-    color: #fff;
+    color: #36ada1;
     text-transform: uppercase;
 }
 
