@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
     image_extentions_arr = %w[jpg jpeg png svg bmp]
     music_extentions_arr = %w[mp3 wav mpeg]
     file_name = resource.file_content_type.split('/')[1]
-    p file_name
     if file_name.in?(image_extentions_arr)
       resource.file.url
     elsif file_name.in?(music_extentions_arr)

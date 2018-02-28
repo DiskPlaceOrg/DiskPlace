@@ -1,5 +1,5 @@
 class Resource < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   has_attached_file :file,
                     resource_type: :raw,
                     path: ":rails_root/public/system/attachment/:style/:filename",

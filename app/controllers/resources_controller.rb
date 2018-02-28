@@ -1,4 +1,5 @@
 class ResourcesController < ApplicationController
+  skip_before_action :verify_authenticity_token, :only => [:destroy]
   def index
     @resources = Resource.order('created_at')
   end
@@ -19,10 +20,10 @@ class ResourcesController < ApplicationController
   end
 
   def destroy
-    @resource = Resource.find(params[:id])
+    p 'destroy'
+    @resource = current_user.resources.find(params[:id])
     if @resource.destroy
       flash[:notice] = 'Successfully deleted resource'
-      redirect_to root_path
     else
       flash[:alert] = 'Error deleted resource'
     end

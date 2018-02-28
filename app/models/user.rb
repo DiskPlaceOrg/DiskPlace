@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :resources
+  has_many :resources, dependent: :destroy
   validates :nick_name,
             presence: true,
             uniqueness: true,
