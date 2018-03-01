@@ -1,16 +1,18 @@
 
   <div id="content">
     <div><%= link_to(image_tag('scrollup.png'),{}, id: 'scrollup')%></div>
-    <div class="clear"></div>
+
     <% current_user.resources.each do |resource|%>
     <div class="media", id="<%= resource.id %>">
-        <h4 class="media-heading">
-          <%= File.basename(resource.file_file_name,
-                            File.extname(resource.file_file_name))%>
-        </h4>
-        <%= link_to image_tag(resource_file_filter(resource), class: 'media-object', width: '200px', height: '200px'),
+
+        <%= link_to image_tag(resource_file_filter(resource), class: 'media-object', width: '150px', height: '150px'),
                     resource_file_filter(resource), target: '_blank' %>
-        <p class="destroy"> Delete </p>
+      <div class="clear"></div>
+      <h4 class="media-heading">
+        <%= File.basename(resource.file_file_name,
+                          File.extname(resource.file_file_name))%>
+      </h4>   <%= image_tag('deletefile.png', class: 'destroy') %>
     </div>
     <% end %>
+  <div class="clear"></div>
   </div>

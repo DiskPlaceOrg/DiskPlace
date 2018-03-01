@@ -8,17 +8,10 @@
          <li class="sub-menu">
           <%= link_to(image_tag('Download.png') + content_tag(:span,'Download'),'javascript:void(0);')%>
             <ul>
-              <li>  <%= link_to(image_tag('folderbtn.png') + content_tag(:span,'Folders'), new_user_resource_path(current_user.id))%>
+              <li>  <%= link_to(image_tag('filesbtn.png') + content_tag(:span,'Load File'), new_user_resource_path(current_user.id))%>
               </li>
-              <li>  <%= link_to(image_tag('filesbtn.png') + content_tag(:span,'Files'),'#')%>
+              <li>  <%= link_to(image_tag('folderbtn.png') + content_tag(:span,'New Folder'),'#')%>
               </li>
-              <li>  <%= link_to(image_tag('photobtn.png') + content_tag(:span,'Photos'),'#')%>
-              </li>
-              <li>  <%= link_to(image_tag('videobtn.png') + content_tag(:span,'Videos'),'#')%>
-              </li>
-              <li>  <%= link_to(image_tag('audiobtn.png') + content_tag(:span,'Audios'),'#')%>
-              </li>
-
            </ul>
           </li>
         <li class="sub-menu">

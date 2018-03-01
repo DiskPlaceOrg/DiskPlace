@@ -77,12 +77,13 @@ body {
 }
 
 #content {
-    margin-top: 35px;
-    min-height: 700px;
-
-    background: rgba(255, 255, 255, .85);
+    padding-top: 35px;
+   min-height: 1000px;
+background: url("http://suren-drummer.info/wp-content/uploads/2017/12/free-website-background-smooth-dark-blue-with-black-vignette-studio-well-use-as-free-website-background-creator.jpg");
+    background-size: cover;
 
 }
+
 
 #top-menu {
     padding-left: 86px;
@@ -659,3 +660,120 @@ transition: all .5s;
     100% {background: #36ada1;-webkit-background-clip: text;
         -webkit-text-fill-color: transparent;}
 }
+.media {float:left;
+width: 200px;
+    z-index: 1.1;
+position: relative;
+overflow: hidden;
+
+height: 200px;
+margin: 25px;
+    box-shadow: 0 .3em 1em rgba(0, 0, 0, .3);}
+.media .media-object {
+   height: 165px;
+
+    width: 200px;
+
+}
+.media .media-heading{text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 25px;
+    padding: 5px 35px 5px 5px;
+
+    background: #f0f0f0;
+    color: #2E2F30;
+    box-shadow: 0 .2em 1em rgba(0, 0, 0, .3);}
+.media .destroy{position: absolute;
+    padding: 5px;
+bottom: 0;
+right: 0;}
+#addresource{
+width: 400px;
+height: 300px;
+background-color: #fff;
+    box-shadow: 0 .2em 1em rgba(0, 0, 0, .3);
+position: absolute;
+top:0;
+bottom: 0;
+left: 0;
+right: 0;
+text-align: center;
+margin: auto;}
+#addresource h2{text-align: center;
+    box-shadow: 0 .2em 1em rgba(0, 0, 0, .3);
+    font-size: 24px;
+    padding: 15px;
+    text-transform: uppercase;
+    background: #f0f0f0;
+    color: #2E2F30;
+
+
+}
+#addresource .button{
+
+
+margin-top: 20px;
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 3px;
+    color: #666;
+
+    padding: 10px 20px;
+    outline: none;
+
+    -webkit-user-select: none;
+
+    text-align: center;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    cursor: pointer;
+
+}
+#addresource .button:hover{
+    border-color: black;
+}
+
+.custom-file-input {
+    margin: 50px auto;
+
+    padding: 5px;
+    font-size: 14px;
+
+    color: #2E2F30;
+
+    vertical-align: middle;
+}
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.custom-file-input::before {
+    content: 'Browse';
+    color: #666;
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin: -3px 0 -3px -3px;
+    padding: 10px 20px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-align: center;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+.custom-file-input:hover::before {
+    border-color: black;
+}
+.custom-file-input:active {
+    outline: 0;
+}
+.custom-file-input:active::before {
+    background: #fff;
+}
+
