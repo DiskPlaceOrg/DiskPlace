@@ -1,7 +1,8 @@
 class ResourcesController < ApplicationController
   skip_before_action :verify_authenticity_token, :only => [:destroy]
+  helper_method :sort_column
   def index
-    @resources = Resource.order('created_at')
+    @resources = current_user.resources
   end
 
   def new
@@ -20,7 +21,6 @@ class ResourcesController < ApplicationController
   end
 
   def destroy
-    p 'destroy'
     @resource = current_user.resources.find(params[:id])
     if @resource.destroy
       flash[:notice] = 'Successfully deleted resource'
@@ -34,4 +34,9 @@ class ResourcesController < ApplicationController
   def resource_params
     params.require(:resource).permit(:file)
   end
+
+  def sort_column
+    params.require(:sorting).permit[:sort] || 'created_at'
+  end
+
 end

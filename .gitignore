@@ -21,3 +21,4 @@
 /yarn-error.log
 /public/system/*
 .byebug_history
+.idea/*

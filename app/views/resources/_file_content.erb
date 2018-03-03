@@ -2,7 +2,7 @@
   <div id="content">
     <div><%= link_to(image_tag('scrollup.png'),{}, id: 'scrollup')%></div>
 
-    <% current_user.resources.each do |resource|%>
+    <% current_user_resources.each do |resource|%>
     <div class="media", id="<%= resource.id %>">
 
         <%= link_to image_tag(resource_file_filter(resource), class: 'media-object', width: '150px', height: '150px'),
@@ -16,3 +16,4 @@
     <% end %>
   <div class="clear"></div>
   </div>
+

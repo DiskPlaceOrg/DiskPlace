@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
     User.where(id: session[:user_id]).first
   end
 
+  def current_user_resources
+    user = User.where(id: session[:user_id]).first
+   if user
+     user.resources.order(params[:sort])
+   end
+  end
+
   def resource_file_filter(resource)
     image_extentions_arr = %w[jpg jpeg png svg bmp]
     music_extentions_arr = %w[mp3 wav mpeg]
@@ -18,5 +25,5 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :current_user, :resource_file_filter
+  helper_method :current_user, :resource_file_filter, :current_user_resources
 end

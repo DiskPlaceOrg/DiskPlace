@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
     // AJAX Delete File function ->
     $(".destroy").on('click', function(){
@@ -13,6 +11,17 @@ $(document).ready(function() {
         });
         this.parentElement.remove();
         }
+    });
+
+    // AJAX sort by created_at and file_file_name
+    $('.toggle').on('click', function() {
+            var classes1 = this.classList;
+            $.ajax({
+                url: '/users/2/resources?sort= '+classes1[2],
+                type: 'GET',
+                success: function(r) {
+                }
+            });
     });
 //top-menu
     $("html, body").animate({ scrollTop: 0 }, "slow");

@@ -2,13 +2,13 @@
   <div id="inner-menu">
     <ul>
 
-      <li><%= link_to 'Select all',{}, id: 'sall'  %></li>
-      <li><%= link_to 'Unselect',{}, id: 'unsall'  %></li>
+      <li id="created_at" class="sort1" ><%= link_to 'select all', '#'%></li>
+      <li id="file_file_name" class="sort2" ><%= link_to 'unselect all', '#'%></li>
       <li><%= link_to 'Share', {},id: 'share'  %></li>
-
-      <li><input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
-        <label for="toggle-on" class="btn">By date</label>
-        <input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio">
+      <li>
+        <%= radio_button_tag(:toggle, :false, true, id: 'toggle-on', class: 'toggle toggle-left created_at ')%>
+        <label for="toggle-on" class="btn btn123">By date</label>
+        <%= radio_button_tag(:toggle, :true, false, id: 'toggle-off', class: 'toggle toggle-right file_file_name')%>
         <label for="toggle-off" class="btn">By name</label></li>
     </ul>
 
