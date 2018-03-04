@@ -35,7 +35,7 @@ body {
     width: 45px;
     overflow: hidden;
     transition: all .5s;
-    z-index: 1;
+    z-index: 2;
     background: inherit;
     box-sizing: border-box;
     box-shadow: 0 .5em 1em rgba(0, 0, 0, .3);
@@ -90,6 +90,7 @@ body {
     box-sizing: border-box;
     width: 100%;
     box-shadow: 0 .5em 1em rgba(0, 0, 0, .3);
+    z-index: 1;
 }
 
 #header {background: #fff;
@@ -598,6 +599,7 @@ input.toggle:checked + label:after {
     display: none;
     top: 50px;
     left: 50px;
+    z-index: 2;
 }
 
 
@@ -662,10 +664,10 @@ transition: all .5s;
 }
 .media {float:left;
 width: 200px;
-    z-index: 1.1;
+
 position: relative;
 overflow: hidden;
-
+background: black;
 height: 200px;
 margin: 25px;
     box-shadow: 0 .3em 1em rgba(0, 0, 0, .3);}
@@ -691,6 +693,7 @@ margin: 25px;
 bottom: 0;
 right: 0;}
 #addresource{
+    overflow: hidden;
 width: 400px;
 height: 300px;
 background-color: #fff;
@@ -703,6 +706,9 @@ right: 0;
 text-align: center;
 margin: auto;}
 #addresource h2{text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     box-shadow: 0 .2em 1em rgba(0, 0, 0, .3);
     font-size: 24px;
     padding: 15px;
@@ -778,3 +784,10 @@ margin-top: 20px;
     background: #fff;
 }
 
+audio{background: url("MusicFile.png");
+height: 162px;
+}
+video{background: black;
+width: 200px;
+height: 162px;
+}

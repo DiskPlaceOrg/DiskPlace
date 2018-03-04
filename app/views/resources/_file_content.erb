@@ -9,13 +9,14 @@
         <%= link_to image_tag(resource_file_filter(resource), class: 'media-object', width: '150px', height: '150px'),
                     resource_file_filter(resource), target: '_blank' %>
       <% when 'audio' %>
-        <audio width="70" controls>
+
+        <audio  controls>
           <source src="<%= resource.file.url %>"
                   type="<%= resource.file_content_type%>">
           Your browser does not support the audio element.
         </audio>
       <% when 'video' %>
-        <video width="150" height="150" controls>
+        <video  controls >
           <source src="<%= resource.file.url %>"
                   type="<%= resource.file_content_type%>">
           Your browser does not support the video element.
