@@ -1,28 +1,25 @@
 $(document).ready(function() {
-    // AJAX Delete File function ->
-    $(".destroy").on('click', function(){
-        if(confirm('Are you sure ?')) {
-        $.ajax({
-            url: '/users/2/resources/'+ this.parentElement.id,
-            type: 'DELETE',
-
-            success: function(r) {
-            }
-        });
-        this.parentElement.remove();
-        }
-    });
 
     // AJAX sort by created_at and file_file_name
     $('.toggle').on('click', function() {
             var classes1 = this.classList;
             $.ajax({
-                url: '/users/2/resources?sort= '+classes1[2],
+                url: '/users/2/resources?sort='+classes1[2],
                 type: 'GET',
                 success: function(r) {
                 }
             });
     });
+
+    $('#file, #image, #video, #audio, #folder, #all').on('click', function() {
+        $.ajax({
+            url: '/users/2/resources?filter='+this.id,
+            type: 'GET',
+            success: function(r) {
+            }
+        });
+    });
+
 //top-menu
     $("html, body").animate({ scrollTop: 0 }, "slow");
     $(window).scroll(function() {

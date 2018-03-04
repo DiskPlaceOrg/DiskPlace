@@ -17,18 +17,12 @@
         <li class="sub-menu">
           <%= link_to(image_tag('Upload.png') + content_tag(:span,'Resources'),'javascript:void(0)')%>
           <ul>
-            <li>  <%= link_to(image_tag('allbtn.png') + content_tag(:span,'All'),'#')%>
-            </li>
-            <li>  <%= link_to(image_tag('folderbtn.png') + content_tag(:span,'Folders'),'#')%>
-            </li>
-            <li>  <%= filterable((image_tag('filesbtn.png') + content_tag(:span,'Files')), '#')%>
-            </li>
-            <li>  <%= link_to(image_tag('photobtn.png') + content_tag(:span,'Photos'),'#')%>
-            </li>
-            <li>  <%= link_to(image_tag('videobtn.png') + content_tag(:span,'Videos'),'#')%>
-            </li>
-            <li>  <%= link_to(image_tag('audiobtn.png') + content_tag(:span,'Audios'),'#')%>
-            </li>
+            <li id="all"> <%= link_to(image_tag('allbtn.png') + content_tag(:span,'All'),'javascript:void(0)')%></li>
+            <li id="folder"> <%= link_to(image_tag('folderbtn.png') + content_tag(:span,'Folders'),'javascript:void(0)')%></li>
+            <li id="file"> <%= link_to(image_tag('filesbtn.png') + content_tag(:span,'Files'),'javascript:void(0)') %></li>
+            <li id="image"> <%= link_to(image_tag('photobtn.png') + content_tag(:span,'Photos'),'javascript:void(0)')%></li>
+            <li id="video"> <%= link_to(image_tag('videobtn.png') + content_tag(:span,'Videos'),'javascript:void(0)')%></li>
+            <li id="audio"> <%= link_to(image_tag('audiobtn.png') + content_tag(:span,'Audios'),'javascript:void(0)')%></li>
 
           </ul>
         </li>

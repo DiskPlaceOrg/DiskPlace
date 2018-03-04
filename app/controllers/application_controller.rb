@@ -2,14 +2,25 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def current_user
-    User.where(id: session[:user_id]).first
+    User.find_by(id: session[:user_id])
   end
 
   def current_user_resources
     user = User.where(id: session[:user_id]).first
-   if user
-     user.resources.order(params[:sort])
-   end
+    session[:user_filter] = params[:filter] unless params[:filter].nil?
+    if user && session[:user_filter].nil? && !params[:sort].nil?
+      user.resources.order(params[:sort])
+    elsif user && params[:sort].nil? && !session[:user_filter].nil? && session[:user_filter].eql?('all')
+      user.resources.order('created_at')
+    elsif user && !params[:sort].nil? && !session[:user_filter].nil? && session[:user_filter].eql?('all')
+      user.resources.order(params[:sort])
+    elsif user && params[:sort].nil? && !session[:user_filter].nil?
+      user.resources.where(resource_type: session[:user_filter])
+    elsif user && !params[:sort].nil? && !session[:user_filter].nil?
+      user.resources.where(resource_type: session[:user_filter]).order(params[:sort])
+    elsif user
+      user.resources.order('created_at')
+    end
   end
 
   def resource_file_filter(resource)

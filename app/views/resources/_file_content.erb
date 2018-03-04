@@ -1,5 +1,5 @@
 
-  <div id="content">
+  <%= javascript_include_tag('file')%>
     <div><%= link_to(image_tag('scrollup.png'),{}, id: 'scrollup')%></div>
 
     <% current_user_resources.each do |resource|%>
@@ -9,11 +9,10 @@
                     resource_file_filter(resource), target: '_blank' %>
       <div class="clear"></div>
       <h4 class="media-heading">
-        <%= File.basename(resource.file_file_name,
-                          File.extname(resource.file_file_name))%>
+        <%= File.basename(resource.file_file_name, File.extname(resource.file_file_name)) %>
       </h4>   <%= image_tag('deletefile.png', class: 'destroy') %>
     </div>
     <% end %>
   <div class="clear"></div>
-  </div>
+
 

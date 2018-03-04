@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    redirect_to user_path(session[:user_id]) if session[:user_id]
+    redirect_to user_path(session[:user_id]) unless session[:user_id].nil?
   end
 
   def create
@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:user_filter] = nil
     session[:user_id] = nil
     redirect_to root_url, notice: 'Logged out'
   end

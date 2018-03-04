@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def filterable(name, filter_by)
-    link_to name, filtr: filter_by
+    link_to name, filter: filter_by
   end
 end
