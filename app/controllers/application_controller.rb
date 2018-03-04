@@ -8,18 +8,20 @@ class ApplicationController < ActionController::Base
   def current_user_resources
     user = User.where(id: session[:user_id]).first
     session[:user_filter] = params[:filter] unless params[:filter].nil?
-    if user && session[:user_filter].nil? && !params[:sort].nil?
-      user.resources.order(params[:sort])
-    elsif user && params[:sort].nil? && !session[:user_filter].nil? && session[:user_filter].eql?('all')
-      user.resources.order('created_at')
-    elsif user && !params[:sort].nil? && !session[:user_filter].nil? && session[:user_filter].eql?('all')
-      user.resources.order(params[:sort])
-    elsif user && params[:sort].nil? && !session[:user_filter].nil?
-      user.resources.where(resource_type: session[:user_filter])
-    elsif user && !params[:sort].nil? && !session[:user_filter].nil?
-      user.resources.where(resource_type: session[:user_filter]).order(params[:sort])
+    filter = session[:user_filter]
+    sort = params[:sort] || 'created_at'
+    if user && filter.nil? && sort
+      user.resources.order(sort)
+    elsif user && sort.nil? && filter && filter.eql?('all')
+      user.resources.order(sort)
+    elsif user && sort && filter && filter.eql?('all')
+      user.resources.order(sort)
+    elsif user && sort.nil? && filter
+      user.resources.where(resource_type: filter)
+    elsif user && sort && filter
+      user.resources.where(resource_type: filter).order(sort)
     elsif user
-      user.resources.order('created_at')
+      user.resources.order(sort)
     end
   end
 

@@ -4,9 +4,23 @@
 
     <% current_user_resources.each do |resource|%>
     <div class="media", id="<%= resource.id %>">
-
+      <% case resource.resource_type %>
+      <% when 'image', 'file' %>
         <%= link_to image_tag(resource_file_filter(resource), class: 'media-object', width: '150px', height: '150px'),
                     resource_file_filter(resource), target: '_blank' %>
+      <% when 'audio' %>
+        <audio width="70" controls>
+          <source src="<%= resource.file.url %>"
+                  type="<%= resource.file_content_type%>">
+          Your browser does not support the audio element.
+        </audio>
+      <% when 'video' %>
+        <video width="150" height="150" controls>
+          <source src="<%= resource.file.url %>"
+                  type="<%= resource.file_content_type%>">
+          Your browser does not support the video element.
+        </video>
+      <% end %>
       <div class="clear"></div>
       <h4 class="media-heading">
         <%= File.basename(resource.file_file_name, File.extname(resource.file_file_name)) %>
