@@ -25,6 +25,7 @@
       <div class="clear"></div>
       <h4 class="media-heading">
         <%= File.basename(resource.file_file_name, File.extname(resource.file_file_name)) %>
+        <%= link_to 'download', "#{current_user.id}/resources/#{resource.id}"%>
       </h4>   <%= image_tag('deletefile.png', class: 'destroy') %>
     </div>
     <% end %>

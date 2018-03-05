@@ -20,6 +20,7 @@ $(document).ready(function() {
         });
     });
 
+
 //top-menu
     $("html, body").animate({ scrollTop: 0 }, "slow");
     $(window).scroll(function() {

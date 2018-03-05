@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :sessions, only: %i[new create destroy]
 
   resources :users, except: %i[new] do
-    resources :resources, only: %i[index new create destroy]
+    resources :resources, defaults: { format: 'json' }
   end
 
   get 'sessions/new'
