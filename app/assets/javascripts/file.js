@@ -12,15 +12,4 @@ $(document).ready(function() {
             this.parentElement.remove();
         }
     });
-
-    $('.download').on('click', function () {
-        alert('Here: '+this.id);
-        $.ajax({
-            url: '1/resources/'+this.id,
-            type: 'GET',
-            success: function (r) {
-
-            }
-        });
-    });
 });

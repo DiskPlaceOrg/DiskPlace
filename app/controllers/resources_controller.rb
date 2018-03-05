@@ -7,15 +7,6 @@ class ResourcesController < ApplicationController
   end
 
   def show
-    @resource = current_user.resources.find_by(id: params[:id])
-    respond_to do |format|
-      @java_url = "/home/ajax_download?file=#{@resource.id}"
-      format.all{
-        send_file @resource.file.path,
-                            filename: @resource.file_file_name,
-                            type: @resource.file_content_type }
-      format.js { render :partial => 'downloadFile'}
-    end
   end
 
   def new
@@ -43,11 +34,11 @@ class ResourcesController < ApplicationController
     end
   end
 
-  def ajax_download
-    extension = @resource.file_file_name.split('.')
-    send_file Rails.root.join('public', 'system', 'attachment', 'original', @resource.file_file_name).to_json,
-              :type => "application/#{extension[1]}", :x_sendfile => true
+  def download
+    @resource = Resource.find_by(id: params[:id])
+    send_file @resource.file.path, :type => "application/#{@resource.file_content_type}", :filename => @resource.file_file_name
   end
+
   private
 
   def resource_params
