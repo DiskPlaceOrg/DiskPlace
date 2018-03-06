@@ -78,7 +78,7 @@ body {
 
 #content {
     margin: 0 0 0 45px;
-    padding-top: 35px;
+
    min-height: 1000px;
    background: rgba(255,255,255,0.2);
 
@@ -103,7 +103,7 @@ body {
 
     overflow: hidden;
 
-    position: fixed;
+    position: relative;
 
 
     background: inherit;
@@ -115,6 +115,7 @@ body {
 
     transition: all ease-in .3s;
     background: #fff;
+    position: fixed;
     border-bottom: 3px solid #36ada1;
 
 }
@@ -559,6 +560,7 @@ input.toggle:checked + label:after {
     top: 50px;
     left: 50px;
     z-index: 2;
+    cursor: pointer;
 }
 
 
