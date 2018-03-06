@@ -68,7 +68,7 @@ body {
     box-shadow: inset 0 0 3000px rgba(0, 0, 0, 0.1);
 }
 
-#content, #header, #footer {
+ #header, #footer {
 
     margin: 0 0 0 45px;
 
@@ -77,10 +77,10 @@ body {
 }
 
 #content {
+    margin: 0 0 0 45px;
     padding-top: 35px;
    min-height: 1000px;
-    background-size: cover;
-    background: url("https://i.stack.imgur.com/BfnUa.png");
+   background: rgba(255,255,255,0.2);
 
 }
 
@@ -89,6 +89,7 @@ body {
     padding-left: 86px;
     box-sizing: border-box;
     width: 100%;
+
     box-shadow: 0 .5em 1em rgba(0, 0, 0, .3);
     z-index: 1;
 }
@@ -104,18 +105,22 @@ body {
 
     position: fixed;
 
-    height: 35px;
+
     background: inherit;
 
 }
 
 #top-menu.shrink {
-    transform: translateY(-50px);
+
 
     transition: all ease-in .3s;
     background: #fff;
     border-bottom: 3px solid #36ada1;
 
+}
+#inner-menu{
+    width: 90%;
+    margin: 0 auto;
 }
 
 #inner-menu ul li {
@@ -261,7 +266,7 @@ body {
     line-height: 25px;
     font-size: 14px;
     padding-left: 10px;
-    color: #aeb2b7;
+    color: #fff;
 }
 
 #right {
@@ -275,60 +280,14 @@ body {
 
 }
 
-.file {
-    float: left;
-    margin: 30px;
-    box-shadow: 0 .5em 1em rgba(0, 0, 0, .3);
 
-    border: 3px solid transparent;
 
-}
 
-.file.checked {
-    border: 3px solid #36ada1;
-    animation: select 3s infinite;
-}
 
-.file.moving {
-    border: 3px solid #2b334a;
-    animation: move 3s infinite;
-}
 
-@keyframes select {
-    0% {
-        border-color: #36ada1;
 
-    }
 
-    50% {
-        border-color: transparent;
 
-    }
-
-    100% {
-        border-color: #36ada1;
-
-    }
-
-}
-
-@keyframes move {
-    0% {
-        border-color: #2b334a;
-
-    }
-
-    50% {
-        border-color: transparent;
-
-    }
-
-    100% {
-        border-color: #2b334a;
-
-    }
-
-}
 
 .text {
     padding: 35px;
@@ -480,7 +439,7 @@ body {
 }
 
 .btn {
-    height: 35px;
+
     font-family: Arial, sans-serif;
     font-size: 12px;
     font-weight: bold;
@@ -670,6 +629,7 @@ overflow: hidden;
 background: black;
 height: 200px;
 margin: 25px;
+    border: 3px solid #F7F7F7;
     box-shadow: 0 .3em 1em rgba(0, 0, 0, .3);}
 .media .media-object {
    height: 165px;
@@ -677,21 +637,33 @@ margin: 25px;
     width: 200px;
 
 }
+.media .secondmedia{display: none;
+
+    height: 50px;
+background: #F7F7F7;}
+.media:hover .firstmedia{display: none;}
+.media:hover .secondmedia{display: block;}
 .media .media-heading{text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     font-size: 14px;
     line-height: 25px;
-    padding: 5px 35px 5px 5px;
+    padding: 5px;
 
     background: #f0f0f0;
     color: #2E2F30;
     box-shadow: 0 .2em 1em rgba(0, 0, 0, .3);}
-.media .destroy{position: absolute;
+
+.media .destroy, .media .select, .media .generate, .media .download img{
+    margin: 5px 5px 5px 25px;
     cursor: pointer;
-    padding: 5px;
-bottom: 0;
-right: 0;}
+
+}
+
+.media.checked {
+    border: 3px solid #36ada1;
+
+}
 #addresource{
     overflow: hidden;
 width: 400px;
@@ -791,3 +763,24 @@ video{background: black;
 width: 200px;
 height: 162px;
 }
+#generatedkey{ font-size: 12px;
+    color: #fff;
+    display: block;
+    width: 135px;
+    overflow: hidden;
+    line-height: 30px;
+margin-right: 25px;
+    outline: none;
+    background: transparent;
+
+    border: none;
+    transition: all .5s;}
+#generatedkey::placeholder {
+    text-transform: uppercase;
+    color: #fff;
+}
+#generatedkey.shrink::placeholder {
+    text-transform: uppercase;
+    color: #36ada1;
+}
+#generatedkey.shrink{color:#36ada1;}

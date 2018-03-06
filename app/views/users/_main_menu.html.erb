@@ -1,24 +1,28 @@
 <nav class="main-menu" id="left">
 
   <div class="sidebar">
-
+    <%=image_tag('menulogo.png') %>
     <div id="leftside-navigation" class="nano">
       <ul>
 
+        <li class="sub-menu">
+          <%= link_to(image_tag('acc.png') + content_tag(:span,current_user.nick_name),'javascript:void(0);')%>
+          <ul>
+            <li>  <%= link_to(image_tag('logout.png') + content_tag(:span,'Logout'), logout_path)%>
+            </li>
+
+          </ul>
+        </li>
+
          <li class="sub-menu">
-          <%= link_to(image_tag('Download.png') + content_tag(:span,'Download'),'javascript:void(0);')%>
-            <ul>
-              <li>  <%= link_to(image_tag('filesbtn.png') + content_tag(:span,'Load File'), new_user_resource_path(current_user.id))%>
-              </li>
-              <li>  <%= link_to(image_tag('folderbtn.png') + content_tag(:span,'New Folder'),'#')%>
-              </li>
-           </ul>
+          <%= link_to(image_tag('Download.png') + content_tag(:span,'Download'),new_user_resource_path(current_user.id))%>
+
           </li>
         <li class="sub-menu">
           <%= link_to(image_tag('Upload.png') + content_tag(:span,'Resources'),'javascript:void(0)')%>
           <ul>
             <li id="all"> <%= link_to(image_tag('allbtn.png') + content_tag(:span,'All'),'javascript:void(0)')%></li>
-            <li id="folder"> <%= link_to(image_tag('folderbtn.png') + content_tag(:span,'Folders'),'javascript:void(0)')%></li>
+
             <li id="file"> <%= link_to(image_tag('filesbtn.png') + content_tag(:span,'Files'),'javascript:void(0)') %></li>
             <li id="image"> <%= link_to(image_tag('photobtn.png') + content_tag(:span,'Photos'),'javascript:void(0)')%></li>
             <li id="video"> <%= link_to(image_tag('videobtn.png') + content_tag(:span,'Videos'),'javascript:void(0)')%></li>
@@ -30,6 +34,7 @@
           <div class="searchbox"><input type="text" value="" name="" placeholder="KEY" required=""/></div>
 
         </form></li>
+
 
 
       </ul>

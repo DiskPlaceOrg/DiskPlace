@@ -1,13 +1,12 @@
 
   <%= javascript_include_tag('file')%>
-    <div><%= link_to(image_tag('scrollup.png'),{}, id: 'scrollup')%></div>
+
 
     <% current_user_resources.each do |resource|%>
     <div class="media", id="<%= resource.id %>">
       <% case resource.resource_type %>
       <% when 'image', 'file' %>
-        <%= link_to image_tag(resource_file_filter(resource), class: 'media-object', width: '150px', height: '150px'),
-                    resource_file_filter(resource), target: '_blank' %>
+        <%=  image_tag(resource_file_filter(resource), class: 'media-object', width: '150px', height: '150px') %>
       <% when 'audio' %>
 
         <audio  controls>
@@ -23,10 +22,16 @@
         </video>
       <% end %>
       <div class="clear"></div>
+      <div class="firstmedia">
       <h4 class="media-heading">
         <%= File.basename(resource.file_file_name, File.extname(resource.file_file_name)) %>
-        <%= link_to 'download', download_user_resource_path(:id => resource.id, :user_id => current_user.id)%>
-      </h4>   <%= image_tag('deletefile.png', class: 'destroy') %>
+
+      </h4> </div>
+      <div class="secondmedia"> <%= image_tag('deletebtn.png', class: 'destroy') %>
+      <%= link_to image_tag('downbtn.png'),download_user_resource_path(:id => resource.id, :user_id => current_user.id),class: 'download'%>
+      <%= image_tag('keybtn.png', class: 'generate') %>
+
+    </div>
     </div>
     <% end %>
   <div class="clear"></div>

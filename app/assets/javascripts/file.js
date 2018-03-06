@@ -3,13 +3,34 @@ $(document).ready(function() {
     $(".destroy").on('click', function () {
         if (confirm('Are you sure ?')) {
             $.ajax({
-                url: '/users/2/resources/' + this.parentElement.id,
+                url: '/users/2/resources/' + this.parentElement.parentElement.id,
                 type: 'DELETE',
 
                 success: function (r) {
                 }
             });
-            this.parentElement.remove();
+            this.parentElement.parentElement.remove();
         }
     });
+    $('#delete').click(function(){
+
+        $('.media.checked').find('.destroy').click();
+
+    });
+    $('.media').click(function(e){
+
+        if(e.ctrlKey){$(this).toggleClass('checked');
+
+
+        }else{
+            $('.media').removeClass('checked');
+            $(this).addClass('checked');
+
+        }
+        e.stopPropagation();
+    });
+
+
+
+
 });

@@ -2,14 +2,17 @@
   <div id="inner-menu">
     <ul>
 
-      <li id="created_at" class="sort1" ><%= link_to 'select all', '#'%></li>
-      <li id="file_file_name" class="sort2" ><%= link_to 'unselect all', '#'%></li>
-      <li><%= link_to 'Share', {},id: 'share'  %></li>
+      <div><%= image_tag('scrollup.png',id: 'scrollup')%></div>  <li><%= link_to 'Delete','javascript:void(0);',id: 'delete'  %></li>
+      <li><%= link_to 'Select','javascript:void(0);',id: 'select'  %></li>
+      <li><%= link_to 'Share','javascript:void(0);',id: 'share'  %></li>
+
+      <li><input type="text" id="generatedkey" placeholder="Your generated key" readonly/></li>
       <li>
         <%= radio_button_tag(:toggle, :false, true, id: 'toggle-on', class: 'toggle toggle-left created_at ')%>
         <label for="toggle-on" class="btn ">By date</label>
         <%= radio_button_tag(:toggle, :true, false, id: 'toggle-off', class: 'toggle toggle-right file_file_name')%>
         <label for="toggle-off" class="btn">By name</label></li>
+
     </ul>
 
   </div>
