@@ -30,7 +30,17 @@ $(document).ready(function() {
         e.stopPropagation();
     });
 
+    // key create
+    $('.generate').on('click', function () {
+        alert('Generate key: ' + this.parentElement.id);
+        $.ajax({
+            url: '/users/2/resources/' + this.parentElement.id + '/file_keys',
+            type: 'POST',
 
+            success: function (r) {
 
+            }
+        });
+    });
 
 });

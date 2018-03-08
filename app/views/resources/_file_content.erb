@@ -1,7 +1,6 @@
 
   <%= javascript_include_tag('file')%>
 
-
     <% current_user_resources.each do |resource|%>
     <div class="media", id="<%= resource.id %>">
       <% case resource.resource_type %>
@@ -27,9 +26,9 @@
         <%= File.basename(resource.file_file_name, File.extname(resource.file_file_name)) %>
 
       </h4> </div>
-      <div class="secondmedia"> <%= image_tag('deletebtn.png', class: 'destroy') %>
+      <div id="<%= resource.id %>" class="secondmedia"> <%= image_tag('deletebtn.png', class: 'destroy') %>
       <%= link_to image_tag('downbtn.png'),download_user_resource_path(:id => resource.id, :user_id => current_user.id),class: 'download'%>
-      <%= image_tag('keybtn.png', class: 'generate') %>
+      <%= image_tag('keybtn.png', class: 'generate')%>
 
     </div>
     </div>

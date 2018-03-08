@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303140653) do
+ActiveRecord::Schema.define(version: 20180308095430) do
+
+  create_table "file_keys", force: :cascade do |t|
+    t.string "file_key"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "file_keys_resources", id: false, force: :cascade do |t|
+    t.integer "resources_id"
+    t.integer "file_keys_id"
+    t.index ["file_keys_id"], name: "index_file_keys_resources_on_file_keys_id"
+    t.index ["resources_id"], name: "index_file_keys_resources_on_resources_id"
+  end
 
   create_table "resources", force: :cascade do |t|
     t.datetime "created_at", null: false

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'download_file', to: 'resources#download_file'
+
   resources :sessions, only: %i[new create destroy]
 
   resources :users, except: %i[new] do
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
       member do
         get :download
       end
+      resources :file_keys, only: %i[create show destroy]
     end
   end
 
