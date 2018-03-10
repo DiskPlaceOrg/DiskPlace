@@ -15,7 +15,7 @@
         </li>
 
          <li class="sub-menu">
-          <%= link_to(image_tag('Download.png') + content_tag(:span,'Download'),new_user_resource_path(current_user.id))%>
+          <%= link_to(image_tag('Download.png') + content_tag(:span,'Upload'),new_user_resource_path(current_user.id))%>
 
           </li>
         <li class="sub-menu">
@@ -31,9 +31,10 @@
           </ul>
         </li>
         <li><form><button type="submit" name="" value="find" ><%= image_tag('searchbtn.png')%></button>
-          <div class="searchbox"><input type="text" value="" name="" placeholder="KEY" required=""/></div>
+          <div class="searchbox"><input id="key-value" type="text" value="" name="" placeholder="KEY" required=""/></div>
 
         </form></li>
+        <li id="get-files">GET FILES</li>
 
 
 

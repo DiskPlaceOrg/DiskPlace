@@ -5,8 +5,6 @@
       <div><%= image_tag('scrollup.png',id: 'scrollup')%></div>  <li><%= link_to 'Delete','javascript:void(0);',id: 'delete'  %></li>
       <li><%= link_to 'Select','javascript:void(0);',id: 'select'  %></li>
       <li><%= link_to 'Share','javascript:void(0);',id: 'share'  %></li>
-
-      <li><input type="text" id="generatedkey" placeholder="Your generated key" readonly/></li>
       <li>
         <%= radio_button_tag(:toggle, :false, true, id: 'toggle-on', class: 'toggle toggle-left created_at ')%>
         <label for="toggle-on" class="btn ">By date</label>

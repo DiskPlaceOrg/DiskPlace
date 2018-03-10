@@ -10,39 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308095430) do
+ActiveRecord::Schema.define(version: 20_180_308_095_430) do
 
-  create_table "file_keys", force: :cascade do |t|
-    t.string "file_key"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'file_keys', force: :cascade do |t|
+    t.string 'file_key'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "file_keys_resources", id: false, force: :cascade do |t|
-    t.integer "resources_id"
-    t.integer "file_keys_id"
-    t.index ["file_keys_id"], name: "index_file_keys_resources_on_file_keys_id"
-    t.index ["resources_id"], name: "index_file_keys_resources_on_resources_id"
+  create_table 'file_keys_resources', id: false, force: :cascade do |t|
+    t.integer 'resource_id'
+    t.integer 'file_key_id'
+    t.index ['file_key_id'], name: 'index_file_keys_resources_on_file_key_id'
+    t.index ['resource_id'], name: 'index_file_keys_resources_on_resource_id'
   end
 
-  create_table "resources", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "file_file_name"
-    t.string "file_content_type"
-    t.integer "file_file_size"
-    t.datetime "file_updated_at"
-    t.integer "user_id"
-    t.string "resource_type"
-    t.index ["user_id"], name: "index_resources_on_user_id"
+  create_table 'resources', force: :cascade do |t|
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'file_file_name'
+    t.string 'file_content_type'
+    t.integer 'file_file_size'
+    t.datetime 'file_updated_at'
+    t.integer 'user_id'
+    t.string 'resource_type'
+    t.index ['user_id'], name: 'index_resources_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "nick_name"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'nick_name'
+    t.string 'email'
+    t.string 'password_digest'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
 end

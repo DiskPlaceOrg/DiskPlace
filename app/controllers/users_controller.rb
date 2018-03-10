@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    sql = "SELECT * from file_keys_resources"
+    result = ActiveRecord::Base.connection.execute(sql)
+    p result.to_a
     #UserMailer.welcome_email(current_user).deliver_later
   end
 

@@ -19,7 +19,17 @@ $(document).ready(function() {
             }
         });
     });
+// file_key handle
+    $("#get-files").on('click', function () {
+        var key_value = document.getElementById('key-value').value;
+        $.ajax({
+           url: '/users/2/resources?file_key=' + key_value,
+           type: 'GET',
+           success: function (r) {
 
+           }
+        });
+    });
 
 //top-menu
     $("html, body").animate({ scrollTop: 0 }, "slow");

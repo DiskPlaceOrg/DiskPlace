@@ -11,7 +11,10 @@ class ApplicationController < ActionController::Base
     session[:user_filter] = params[:filter] unless params[:filter].nil?
     filter = session[:user_filter]
     sort = params[:sort] || 'created_at'
-    if user && filter.nil? && sort
+    if params[:file_key]
+      key_collect =  FileKey.where(file_key: params[:file_key])
+      Resource.includes(:file_key).where('file_keys.id' => key_collect)
+    elsif user && filter.nil? && sort
       user.resources.order(sort)
     elsif user && sort.nil? && filter && filter.eql?('all')
       user.resources.order(sort)
