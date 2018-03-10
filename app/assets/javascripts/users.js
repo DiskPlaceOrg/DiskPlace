@@ -34,7 +34,7 @@ $(document).ready(function() {
 //top-menu
     $("html, body").animate({ scrollTop: 0 }, "slow");
     $(window).scroll(function() {
-        if($(document).scrollTop() > 50) {
+        if($(document).scrollTop() > 0) {
             $('#top-menu').addClass('shrink');
             $('#inner-menu a').addClass('shrink');
             $('#generatedkey').addClass('shrink');
