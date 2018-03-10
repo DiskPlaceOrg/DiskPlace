@@ -3,11 +3,13 @@ class FileKeysController < ApplicationController
 
   def create
     key = generate_file_key
-    @resource = current_user.resources.find_by(id: params[:resource_id])
+    @resource = current_user.resources.where(id: params[:resource_id].split(','))
     @file_key = FileKey.new(file_key: key)
     if @file_key.save
       p key
-      @resource.file_key << @file_key
+      @resource.each do |r|
+        r.file_key << @file_key
+      end
       respond_to do |format|
         format.js { render file: 'file_keys/create' }
       end

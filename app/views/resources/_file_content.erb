@@ -22,15 +22,18 @@
       <% end %>
       <div class="clear"></div>
       <div class="firstmedia">
-      <h4 class="media-heading">
-        <%= File.basename(resource.file_file_name, File.extname(resource.file_file_name)) %>
+        <h4 class="media-heading">
+          <%= File.basename(resource.file_file_name, File.extname(resource.file_file_name)) %>
+        </h4>
+      </div>
+      <div id="<%= resource.id %>" class="secondmedia">
+        <% if current_user.resources.ids.include? resource.id %>
+          <%= image_tag('deletebtn.png', class: 'destroy') %>
+          <%= image_tag('keybtn.png', class: 'generate')%>
+        <% end %>
+        <%= link_to image_tag('downbtn.png'),download_user_resource_path(:id => resource.id, :user_id => current_user.id),class: 'download'%>
+      </div>
 
-      </h4> </div>
-      <div id="<%= resource.id %>" class="secondmedia"> <%= image_tag('deletebtn.png', class: 'destroy') %>
-      <%= link_to image_tag('downbtn.png'),download_user_resource_path(:id => resource.id, :user_id => current_user.id),class: 'download'%>
-      <%= image_tag('keybtn.png', class: 'generate')%>
-
-    </div>
     </div>
     <% end %>
   <div class="clear"></div>
