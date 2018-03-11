@@ -3,6 +3,7 @@
 
     <% current_user_resources.each do |resource|%>
     <div class="media", id="<%= resource.id %>">
+
       <% case resource.resource_type %>
       <% when 'image', 'file', 'archive' %>
         <%=  image_tag(resource_file_filter(resource), class: 'media-object', width: '150px', height: '150px') %>
@@ -22,8 +23,9 @@
       <div class="clear"></div>
       <div class="firstmedia">
         <h4 class="media-heading">
-          <%= File.basename(resource.file_file_name, File.extname(resource.file_file_name)) %>
+          <%= File.basename(resource.file_file_name) %>
         </h4>
+        <h4 class="media-ext"> <%= File.extname(resource.file_file_name) %></h4>
       </div>
       <div id="<%= resource.id %>" class="secondmedia">
         <% if current_user.resources.ids.include? resource.id %>

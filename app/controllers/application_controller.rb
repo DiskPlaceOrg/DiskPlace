@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
     elsif file_name.in?(music_extentions_arr)
       'MusicFile.png'
     elsif file_name.in?(archive_extentions_arr)
-      'MusicFile.png'
+      'ZipFile.png'
     else
       'TextFile.png'
     end

@@ -5,12 +5,13 @@
       <div><%= image_tag('scrollup.png',id: 'scrollup')%></div>  <li><%= link_to 'Delete','javascript:void(0);',id: 'delete'  %></li>
       <li><%= link_to 'Select','javascript:void(0);',id: 'select'  %></li>
       <li><%= link_to 'Add key','javascript:void(0);',id: 'share'  %></li>
+      <li><%= link_to 'My Keys List', user_resource_file_keys_path(user_id: current_user.id, resource_id: 12)%></li>
       <li>
         <%= radio_button_tag(:toggle, :false, true, id: 'toggle-on', class: 'toggle toggle-left created_at ')%>
         <label for="toggle-on" class="btn ">By date</label>
         <%= radio_button_tag(:toggle, :true, false, id: 'toggle-off', class: 'toggle toggle-right file_file_name')%>
         <label for="toggle-off" class="btn">By name</label></li>
-      <li><%= link_to 'My Keys List', user_resource_file_keys_path(user_id: current_user.id, resource_id: 12)%></li>
+
     </ul>
 
   </div>
