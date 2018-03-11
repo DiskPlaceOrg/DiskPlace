@@ -56,6 +56,7 @@ class ResourcesController < ApplicationController
   def set_resource_type(resource)
     image_extentions_arr = %w[jpg jpeg png svg bmp]
     music_extentions_arr = %w[mp3 wav mpeg]
+    archive_extentions_arr = %w[rar zip x-bzip]
     video_extentions_arr = %w[mp4]
     file_name = resource.file_content_type.split('/')[1]
     if file_name.in?(image_extentions_arr)
@@ -64,6 +65,8 @@ class ResourcesController < ApplicationController
       Resource.where(id: resource.id).update_all(resource_type: 'audio')
     elsif file_name.in?(video_extentions_arr)
       Resource.where(id: resource.id).update_all(resource_type: 'video')
+    elsif file_name.in?(archive_extentions_arr)
+      Resource.where(id: resource.id).update_all(resource_type: 'archive')
     else
       Resource.where(id: resource.id).update_all(resource_type: 'file')
     end

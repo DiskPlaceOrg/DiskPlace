@@ -32,11 +32,14 @@ class ApplicationController < ActionController::Base
   def resource_file_filter(resource)
     image_extentions_arr = %w[jpg jpeg png svg bmp]
     music_extentions_arr = %w[mp3 wav mpeg]
+    archive_extentions_arr = %w[rar zip x-bzip]
     file_name = resource.file_content_type.split('/')[1]
     if file_name.in?(image_extentions_arr)
       resource.file.url
     elsif file_name.in?(music_extentions_arr)
-      'MusicFile.jpg'
+      'MusicFile.png'
+    elsif file_name.in?(archive_extentions_arr)
+      'MusicFile.png'
     else
       'TextFile.png'
     end

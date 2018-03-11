@@ -11,7 +11,7 @@ $(document).ready(function() {
             });
     });
 
-    $('#file, #image, #video, #audio, #folder, #all').on('click', function() {
+    $('#file, #image, #video, #audio, #folder, #all, #archive').on('click', function() {
         $.ajax({
             url: '/users/2/resources?filter='+this.id,
             type: 'GET',

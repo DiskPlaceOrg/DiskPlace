@@ -4,7 +4,7 @@
     <% current_user_resources.each do |resource|%>
     <div class="media", id="<%= resource.id %>">
       <% case resource.resource_type %>
-      <% when 'image', 'file' %>
+      <% when 'image', 'file', 'archive' %>
         <%=  image_tag(resource_file_filter(resource), class: 'media-object', width: '150px', height: '150px') %>
       <% when 'audio' %>
         <audio  controls>
@@ -22,7 +22,7 @@
       <div class="clear"></div>
       <div class="firstmedia">
         <h4 class="media-heading">
-          <%= resource.file_content_type %>
+          <%= File.basename(resource.file_file_name, File.extname(resource.file_file_name)) %>
         </h4>
       </div>
       <div id="<%= resource.id %>" class="secondmedia">
