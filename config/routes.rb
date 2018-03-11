@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       member do
         get :download
       end
-      resources :file_keys, only: %i[create show destroy]
+      resources :file_keys, only: %i[index create show destroy]
     end
   end
 

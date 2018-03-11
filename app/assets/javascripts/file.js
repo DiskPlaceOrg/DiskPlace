@@ -49,24 +49,4 @@ $(document).ready(function() {
             }
         });
     });
-
-    // $('#share').click(function(){
-    //     var id_array = [];
-    //     alert('a');
-    //     id_array.push($('.media.checked').find('.secondmedia').attr('id'));
-    //     alert('id_array: ' + id_array[1]);
-    //     alert('id_array: ' + id_array[0]);
-    // });
-
-    // $('#share').click(function() {
-    //     var i = 0;
-    //     var ids = [];
-    //     $('.secondmedia').each(function () {
-    //        ids[i++] = $(this).attr('id');
-    //     });
-    //     for(var a = 0; a < ids.length; a++) {
-    //         alert('element['+a+']: '+ ids[a]);
-    //     }
-    // });
-
 });

@@ -10,7 +10,7 @@
         <label for="toggle-on" class="btn ">By date</label>
         <%= radio_button_tag(:toggle, :true, false, id: 'toggle-off', class: 'toggle toggle-right file_file_name')%>
         <label for="toggle-off" class="btn">By name</label></li>
-
+      <li><%= link_to 'My Keys List', user_resource_file_keys_path(user_id: current_user.id, resource_id: 12)%></li>
     </ul>
 
   </div>

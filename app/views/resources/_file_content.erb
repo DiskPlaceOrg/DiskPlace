@@ -7,14 +7,13 @@
       <% when 'image', 'file' %>
         <%=  image_tag(resource_file_filter(resource), class: 'media-object', width: '150px', height: '150px') %>
       <% when 'audio' %>
-
         <audio  controls>
           <source src="<%= resource.file.url %>"
                   type="<%= resource.file_content_type%>">
           Your browser does not support the audio element.
         </audio>
       <% when 'video' %>
-        <video  controls >
+        <video controls controlsList="nodownload">
           <source src="<%= resource.file.url %>"
                   type="<%= resource.file_content_type%>">
           Your browser does not support the video element.
@@ -23,7 +22,7 @@
       <div class="clear"></div>
       <div class="firstmedia">
         <h4 class="media-heading">
-          <%= File.basename(resource.file_file_name, File.extname(resource.file_file_name)) %>
+          <%= resource.file_content_type %>
         </h4>
       </div>
       <div id="<%= resource.id %>" class="secondmedia">

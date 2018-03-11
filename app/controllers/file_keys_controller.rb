@@ -1,5 +1,10 @@
 class FileKeysController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:create]
+  skip_before_action :verify_authenticity_token, only: %i[create destroy]
+
+  def index
+    @file_keys = FileKey.includes(:resource).where('resources.id' => current_user.resources.ids)
+    @resources = Resource.includes(:file_key).where('file_keys.id' => @file_keys.ids)
+  end
 
   def create
     key = generate_file_key
@@ -18,10 +23,15 @@ class FileKeysController < ApplicationController
     end
   end
 
-  def show
+  def shows
   end
 
   def destroy
+    @file_keys = FileKey.includes(:resource).where('resources.id' => current_user.resources.ids)
+    deleted_key = @file_keys.find_by(id: params[:id])
+    if deleted_key
+      deleted_key.delete
+    end
   end
 
   private
