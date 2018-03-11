@@ -1,14 +1,18 @@
+
+<div id="filekeybox">
+<h2>Your file keys</h2>
 <% @file_keys.each do |fk|%>
   <br>
-  <div>
-    <h2>FileKey:</h2><%= fk.file_key %><br>
-    <h2>Created at:</h2><%= fk.created_at %><br>
-    <h2>Key for files: </h2>
+  <div class="filekeyblock">
+    <h4>FileKey:</h4><p><%= fk.file_key %></p>
+    <h4>Created at:</h4><p><%= fk.created_at %></p>
+    <h4>Key for files: </h4><p>
     <% @resources.each do |res|%>
       <%= res.file_file_name %>,
-    <% end %>
-    <br>
-    <strong id="<%= fk.id %>" class="file_key_delete">Delete</strong>
+    <% end %></p>
+
+    <button id="<%= fk.id %>" class="file_key_delete">Delete</button>
   </div>
 <% end %>
 <%= javascript_include_tag 'file_keys'%>
+</div>
