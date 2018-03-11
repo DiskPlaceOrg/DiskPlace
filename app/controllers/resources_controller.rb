@@ -6,24 +6,21 @@ class ResourcesController < ApplicationController
     @resources = current_user.resources
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @resource = Resource.new
   end
 
   def create
-    @resource = current_user.resources.build(file: resource_params[:file])
-    if @resource.save
-      set_resource_type(@resource)
-      flash[:notice] = 'Successfully added new resource!'
+    @resource = current_user.resources.build(resource_params[:files])
+    if current_user.save
+      #set_resource_type(@resource)
       redirect_to current_user
     else
-      flash[:alert] = 'Error adding new resource!'
       render :new
     end
-  end
+end
 
   def destroy
     @resource = current_user.resources.find(params[:id])
@@ -42,7 +39,7 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resource).permit(:file)
+    params.require(:resource).permit(files: [:file])
   end
 
   def sort_column
@@ -71,5 +68,4 @@ class ResourcesController < ApplicationController
       Resource.where(id: resource.id).update_all(resource_type: 'file')
     end
   end
-
 end

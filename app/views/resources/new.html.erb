@@ -19,7 +19,7 @@
     <% end %>
 
 
-  <%= file_field(:resource, :file,:class => 'custom-file-input',:id => 'upload') %>
+  <%= file_field(:resource, "files[][file]",:class => 'custom-file-input',:id => 'upload', multiple: true) %>
   <%= f.submit 'Upload Resource',:class => 'button'%>
 <% end %>
 </div>

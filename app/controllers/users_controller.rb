@@ -22,9 +22,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.security_key = generate_security_key
+      @user.save
       UserMailer.welcome_email(@user).deliver_now
-      session[:user_id] = @user.id
-      redirect_to @user, notice: 'User was successfully created.'
+      redirect_to login_path
     else
       render :new
     end
@@ -52,5 +53,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:users).permit(:nick_name, :email, :password, :password_confirmation)
+  end
+
+  def generate_security_key
+    SecureRandom.hex(6)
   end
 end
